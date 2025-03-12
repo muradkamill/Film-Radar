@@ -8,12 +8,7 @@ import { BodyComponent } from './body/body.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'body',
-    pathMatch: 'full',
-  },
-  {
-    path: 'body',
-    component: BodyComponent,
+component:BodyComponent
   },
   {
     path: 'search',
