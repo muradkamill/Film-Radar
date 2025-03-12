@@ -11,6 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class BestsComponent implements OnInit {
   api: any[] = [];
   Id?: SafeResourceUrl|null=null;
+  key='AIzaSyBGlvykkr32Ewb6OogNtckDeejIR21cbrU'
 
   constructor(private httpClient: HttpClient,private sanitizer: DomSanitizer) {}
 
@@ -19,7 +20,7 @@ export class BestsComponent implements OnInit {
       let x = Math.floor(Math.random() * 60);
       this.httpClient
         .get<any>(
-          'https://www.googleapis.com/youtube/v3/search?part=snippet&q=The+Best+Movies&type=video&maxResults=1000&order=viewCount&regionCode=US&key=AIzaSyA9vlQ8G8rkprfaN3JbzZ7cuIupXiAOHeQ'
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&q=The+Best+Movies&type=video&maxResults=1000&order=viewCount&regionCode=US&key=${this.key}`
         )
         .subscribe({
           next: (data) =>  {

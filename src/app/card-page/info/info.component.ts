@@ -21,6 +21,7 @@ export class InfoComponent implements OnInit{
   Metacritic: any;
   Id?: SafeResourceUrl|null=null;
   api: any[] = [];
+  key='AIzaSyBGlvykkr32Ewb6OogNtckDeejIR21cbrU'
 
 
   constructor(
@@ -68,7 +69,7 @@ export class InfoComponent implements OnInit{
 
       this.httpClient
         .get<any>(
-`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.name}&type=video&maxResults=20&order=viewCount&regionCode=US&key=AIzaSyA_o6sF9AysjEueXAE25PW4ezPoH2y2pwU`).subscribe({
+`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.name}&type=video&maxResults=20&order=viewCount&regionCode=US&key=${this.key}`).subscribe({
           next: (data) =>{
             for (let i = 0; i < 4; i++) {
               let x = Math.floor(Math.random() * 15);
