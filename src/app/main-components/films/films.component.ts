@@ -28,7 +28,6 @@ export class FilmsComponent implements OnInit {
     'Fight+Club',
     'Inception',
     'The+Lord+of+the+Rings+The+Two+Towers',
-    'Star+Wars+Episode+V+The+Empire+Strikes+Back',
     'The+Matrix',
     'Goodfellas',
     "One+Flew+Over+the+Cuckoo's+Nest",

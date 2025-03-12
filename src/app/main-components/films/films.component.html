@@ -2,7 +2,7 @@
   <h3 class="mb-4">FILMS</h3>
   <div class="row ">
 
-@if (sixFilms) {
+@if (sixFilms[0] !== sixFilms[1] !== sixFilms[2] !== sixFilms[3] !== sixFilms[4] !== sixFilms[5] ) {
     <div class="col-md-4 mt-3 mb-3  ">
       <div class="card custom-cards border border-dark">
         <img src='{{sixFilms[0]?.Poster}}' class="card-img-top foto" alt="...">
