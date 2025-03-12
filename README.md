@@ -20,23 +20,28 @@ FilmRadar is a web application that allows you to search for any movie, get deta
 
 ## 🔧 Installation & Usage  
 
-###  Clone the Repository  
+### 1️⃣ Clone the Repository  
 ```sh
-git clone https://github.com/muradkamill/FilmRadar.git
-cd FilmRadar
+git clone https://github.com/muradkamill/FilmRadar.git && cd FilmRadar
+```
 
-
-
-###  Install Dependencies 
+### 2️⃣ Install Dependencies  
 ```sh
 npm install
+```
 
-
-###  Start the Development Server
+### 3️⃣ Start the Development Server  
 ```sh
 npm start
+```
+After running this, the app should be available at **http://localhost:3000/**.  
 
+---
 
-### For a Production Build, use:
-```sh
-npm run build
+## 📜 License  
+This project is licensed under the MIT License.  
+
+---
+
+## 🤝 Contributions  
+For more information or to contribute to the project, visit [Film Radar Body](https://film-radar.vercel.app/body).
