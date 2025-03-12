@@ -24,3 +24,10 @@ FilmRadar is a web application that allows you to search for any movie, get deta
 ```sh
 git clone https://github.com/muradkamill/FilmRadar.git
 cd FilmRadar
+
+2
+
+### 2 Clone the Repository  
+```sh
+git clone https://github.com/muradkamill/FilmRadar.git
+cd FilmRadar
