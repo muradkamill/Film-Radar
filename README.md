@@ -20,14 +20,23 @@ FilmRadar is a web application that allows you to search for any movie, get deta
 
 ## 🔧 Installation & Usage  
 
-### 1️⃣ Clone the Repository  
+###  Clone the Repository  
 ```sh
 git clone https://github.com/muradkamill/FilmRadar.git
 cd FilmRadar
 
-2
 
-### 2 Clone the Repository  
+
+###  Install Dependencies 
 ```sh
-git clone https://github.com/muradkamill/FilmRadar.git
-cd FilmRadar
+npm install
+
+
+###  Start the Development Server
+```sh
+npm start
+
+
+### For a Production Build, use:
+```sh
+npm run build
