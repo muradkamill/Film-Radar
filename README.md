@@ -44,4 +44,4 @@ This project is licensed under the MIT License.
 ---
 
 ## 🤝 Contributions  
-For more information or to contribute to the project, visit [Film Radar Body](https://film-radar.vercel.app/body).
+For more information or to contribute to the project, visit [Film Radar](https://film-radar.vercel.app/body).
