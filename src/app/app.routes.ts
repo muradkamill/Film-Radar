@@ -19,16 +19,19 @@ export const routes: Routes = [
     path: 'search',
     component: SearchComponent,
   },
-  // {
-  //   path: 'search/:name',
-  //   component: SearchComponent,
-  // },
+  {
+    path: 'search/:name',
+    component: SearchComponent,
+  },
 
   {
     path: 'film',
     component: CardPageComponent,
   },
-
+  {
+    path: 'film/:name',
+    component: CardPageComponent,
+  },
   {
     path: 'watchlist',
     component: WatchlistComponent,

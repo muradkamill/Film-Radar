@@ -1,192 +1,217 @@
-<div class="container ">
+<div class="container">
   <h3 class="mb-4">FILMS</h3>
-<div class="row ">
-             <div class="col-md-4 mt-3 mb-3  ">
-              <div class="card custom-cards border border-dark" >
-              <img src="https://picsum.photos/id/23/200/200" class="card-img-top" alt="...">
-              <div class="card-body  text-light">
-                <h5 class="card-title ">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+  <div class="row ">
+
+@if (sixFilms) {
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark">
+        <img src='{{sixFilms[0]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title " (click)="onClicked0()">{{sixFilms[0]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[0]?.Plot}}</p>
+        </div>
+
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
+
+
+            <div
+              class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[0])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked0()">Card link</a>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark">
+        <img src='{{sixFilms[1]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title" (click)="onClicked1()">{{sixFilms[1]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[1]?.Plot}}</p>
+        </div>
+
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
+
+
+            <div
+              class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[1])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked1()">Card link</a>
+        </div>
+      </div>
+    </div>
 
 
 
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark ">
+        <img src='{{sixFilms[2]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title " (click)="onClicked2()">{{sixFilms[2]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[2]?.Plot}}</p>
+        </div>
+
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
 
 
+            <div
+              class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[2])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked2()">Card link</a>
+        </div>
+      </div>
+    </div>
 
 
-              <div class="container">
-                <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-         
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark">
+        <img src='{{sixFilms[3]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title" (click)="onClicked3()">{{sixFilms[3]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[3]?.Plot}}</p>
+        </div>
 
-         <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                <button   class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                              <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                       </button>
-                       
-         </div>
-         </header>
-         </div>
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
 
 
-
-
-
-
-
-
-
-              <div class="card-body bg-dark text-light ">
-                <a routerLink="film" class="fw-bold card-link ">Card link</a>
-              </div>
-              </div>
-              </div>
-
-
-
-
-              <div class="col-md-4 mt-3 mb-3 ">
-                     <div class="card custom-cards border border-dark" >
-                     <img src="https://picsum.photos/id/137/200/200" class="card-img-top" alt="...">
-                     <div class="card-body  text-light">
-                       <h5 class="card-title">Card title</h5>
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                     </div>
-                     <div class="container">
-                      <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-               
-      
-               <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                      <button class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                                    <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                             </button>
-               </div>
-               </header>
-               </div>
-                     <div class="card-body bg-dark text-light ">
-                       <a href="#" class="card-link fw-bold">Card link</a>
-                     </div>
-                     </div>
-                     </div>
-
-
-
-
-
-
-                     <div class="col-md-4 mt-3 mb-3   ">
-                            <div class="card custom-cards border border-dark" >
-                            <img src="https://picsum.photos/id/267/200/200" class="card-img-top" alt="...">
-                            <div class="card-body  text-light">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="container">
-                              <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-                       
+            <div
+              class=" co
               
-                       <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                              <button class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                                            <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                                     </button>
-                       </div>
-                       </header>
-                       </div>
-                            <div class="card-body bg-dark text-light ">
-                              <a href="#" class="card-link fw-bold">Card link</a>
-                            </div>
-                            </div>
-                            </div>
+              l-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[3])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked3()">Card link</a>
+        </div>
+      </div>
+    </div>
 
 
+
+
+
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark">
+        <img src='{{sixFilms[4]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title" (click)="onClicked4()">{{sixFilms[4]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[4]?.Plot}}</p>
+        </div>
+
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
+
+
+            <div
+              class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[4])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked4()">Card link</a>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="col-md-4 mt-3 mb-3  ">
+      <div class="card custom-cards border border-dark">
+        <img src='{{sixFilms[5]?.Poster}}' class="card-img-top foto" alt="...">
+        <div class="card-body  text-light">
+          <h5 class="card-title title" (click)="onClicked5()">{{sixFilms[5]?.Title}}</h5>
+          <p class="card-text films">{{sixFilms[5]?.Plot}}</p>
+        </div>
+
+        <div class="container">
+          <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
+
+
+            <div
+              class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
+              <button (click)="onWatch(sixFilms[5])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+                <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+                  class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+                  onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
+                  data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
+              </button>
+
+            </div>
+          </header>
+        </div>
+
+        <div class="card-body bg-dark text-light ">
+          <a routerLink="film" class="fw-bold card-link" (click)="onClicked5()">Card link</a>
+        </div>
+      </div>
+    </div>
+  }
+  </div>
 </div>
-
-<div class="row">      
-
-       <div class="col-md-4 mt-3 mb-3  ">
-              <div class="card custom-cards border border-dark" >
-              <img src="https://picsum.photos/id/217/200/200" class="card-img-top" alt="...">
-              <div class="card-body  text-light">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-              <div class="container">
-                <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-         
-
-         <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                <button class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                              <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                       </button>
-         </div>
-         </header>
-         </div>
-              <div class="card-body bg-dark text-light ">
-                <a href="#" class="card-link fw-bold">Card link</a>
-              </div>
-              </div>
-              </div>
-
-
-
-
-              <div class="col-md-4 mt-3  mb-3 ">
-                     <div class="card custom-cards border border-dark" >
-                     <img src="https://picsum.photos/id/37/200/200" class="card-img-top" alt="...">
-                     <div class="card-body  text-light">
-                       <h5 class="card-title">Card title</h5>
-                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                     </div>
-                     <div class="container">
-                      <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-               
-      
-               <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                      <button class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                                    <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                             </button>
-               </div>
-               </header>
-               </div>
-                     <div class="card-body bg-dark text-light ">
-                       <a href="#" class="card-link fw-bold">Card link</a>
-                     </div>
-                     </div>
-                     </div>
-
-
-
-
-
-
-                     <div class="col-md-4 mt-3  mb-3 ">
-                            <div class="card custom-cards border border-dark" >
-                            <img src="https://picsum.photos/id/232/200/200" class="card-img-top" alt="...">
-                            <div class="card-body  text-light">
-                              <h5 class="card-title">Card title</h5>
-                              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                            <div class="container">
-                              <header class="d-flex flex-wrap align-items-center justify-content-between  py-3 mb-4 border-bottom">
-                       
-              
-                       <div class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-                              <button class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
-                                            <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst1317m3j5">
-                                     </button>
-                       </div>
-                       </header>
-                       </div>
-                            <div class="card-body bg-dark text-light ">
-                              <a href="#" class="card-link fw-bold">Card link</a>
-                            </div>
-                            </div>
-                            </div>
-
-
-
-</div>
-</div>
-
 
 

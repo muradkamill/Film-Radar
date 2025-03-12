@@ -13,6 +13,4 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
-export class BodyComponent {
-
-}
+export class BodyComponent {}

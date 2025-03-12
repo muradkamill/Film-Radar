@@ -1,89 +1,183 @@
 <div class="container">
   <div class="card mb-3 position-relative">
-      <div class="row g-0">
-          <div class="col-md-4">
-              <img src="https://m.media-amazon.com/images/M/MV5BMzU5ZGYzNmQtMTdhYy00OGRiLTg0NmQtYjVjNzliZTg1ZGE4XkEyXkFqcGc@._V1_SX300.jpg" 
-                   class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-              <div class="card-body position-relative">
-                  <button class="watchlist border-dark border bg-custom-gray text-light p-2 py-1 
-                                 position-absolute top-0 end-0 mt-2 me-2">
-                      <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" 
-                           loading="lazy" class="icon loaded me-1" 
-                           alt="plus icon" title="plus icon">
-                      ADD TO WATCHLIST
-                  </button>
-
-                  <h5 class="card-title">
-                      FILM NAME
-                      <label class="border bg-custom-gray p-1 fw-bold imdb">
-                          IMDB : <span class="card-text"><small>6.4</small></span>
-                      </label>
-                  </h5>
-                  
-                  <p class="card-text">
-                      PLOT <br><br>
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure consectetur delectus corporis assumenda omnis quibusdam nisi itaque cupiditate aspernatur, doloremque quia beatae similique nobis nulla, dicta est quasi dolore non.
-                      Odio voluptatem corrupti, recusandae eveniet corporis dignissimos nobis
-                      lorem*1
-                      
-                      
-                  </p>
-
-                  <p class="card-text"><small class="text-body-secondary">Run Time</small></p>
-                  <p class="card-text"><small class="text-body-secondary">Release Date</small></p>
-                  <p class="card-text"><small class="text-body-secondary">Genre</small></p>
-                  <p class="card-text"><small class="text-body-secondary">Cast & Crew</small>
-                    <p class="card-text"><small class="text-body-secondary">Languages</small></p>
-
-
-
-
-
-
-
-
-  
-              </div>
-          </div>
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src={{data.Poster}} class=" w-100 img-fluid rounded-start" alt="...">
       </div>
+      <div class="col-md-8">
+        <div class="card-body position-relative">
+          <button (click)="onWatchClicked()" class="watchlist border-dark border bg-custom-gray text-light  p-2 py-1 
+                                 position-absolute top-0 end-0 mt-2 me-2">
+            <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
+              class="icon loaded me-1" alt="plus icon" title="plus icon">
+            ADD TO WATCHLIST
+          </button>
+<br><br>
+          <h5 class="card-title">
+            {{data.Title}} &nbsp; &nbsp; &nbsp;
+            <label class="border bg-custom-gray p-1 fw-bold imdb">
+              IMDB : <span class="card-text"><small>{{data.imdbRating}}</small></span>
+            </label>
+          </h5>
+
+          <p class="card-text">
+            {{data.Plot}}
+
+          </p>
+
+          <p class="card-text"><small class="text-body-secondary">Run Time : {{data.Runtime}} </small></p>
+          <p class="card-text"><small class="text-body-secondary">Release Date :{{data.Released}}</small></p>
+          <p class="card-text"><small class="text-body-secondary">Genre :{{data.Genre}}</small></p>
+          <p class="card-text"><small class="text-body-secondary">Cast & Crew : {{data.Actors}} {{data.Director}}
+              {{data.Writer}} </small>
+          <p class="card-text"><small class="text-body-secondary">Languages :{{data.Language}}</small></p>
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+    </div>
   </div>
-<h3>RATINGS</h3>
+  <h3>RATINGS</h3>
   <div class="row">
 
-    <div class="card col-md-3 col-6" >
+    <div class="card col-md-3 col-6">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">IMDb &nbsp; : &nbsp; 
-            <img src="https://static-00.iconduck.com/assets.00/imdb-icon-512x512-bjf2gjti.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="imdb icon" title="imdb icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstqy5cp0z7" >   &nbsp; &nbsp; &nbsp;8.5
+        <li class="list-group-item">IMDb &nbsp; : &nbsp;
+          <img src="https://static-00.iconduck.com/assets.00/imdb-icon-512x512-bjf2gjti.png" loading="lazy"
+            class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="imdb icon" title="imdb icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstqy5cp0z7">
+          &nbsp; &nbsp; &nbsp; {{InternetMovieDatabase}}
         </li>
         <li class="list-group-item">
           Rotten Tomatoes &nbsp; : &nbsp;
-  
-            <img src="https://static-00.iconduck.com/assets.00/rotten-tomatoes-icon-510x512-3iv1447w.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="rotten tomatoes icon" title="rotten tomatoes icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/assthi6e9hx8">&nbsp; &nbsp; &nbsp; 9.5
+
+          <img src="https://static-00.iconduck.com/assets.00/rotten-tomatoes-icon-510x512-3iv1447w.png" loading="lazy"
+            class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="rotten tomatoes icon" title="rotten tomatoes icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/assthi6e9hx8">&nbsp;
+          &nbsp; &nbsp; {{rottenTomatoesRating}}
         </li>
-        <li class="list-group-item">Metacritic &nbsp; : &nbsp; 
-            <img src="https://static-00.iconduck.com/assets.00/meta-fill-logo-icon-512x370-htf4d56z.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="meta fill logo icon" title="meta fill logo icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstpoklk3jm"> &nbsp; &nbsp; &nbsp; 3.5
+        <li class="list-group-item">Metacritic &nbsp; : &nbsp;
+          <img src="https://static-00.iconduck.com/assets.00/meta-fill-logo-icon-512x370-htf4d56z.png" loading="lazy"
+            class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="meta fill logo icon" title="meta fill logo icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstpoklk3jm">
+          &nbsp; &nbsp; &nbsp; {{Metacritic}}
         </li>
       </ul>
     </div>
 
-  
-  <div class="card col-md-3 offset-md-6 offset-0 col-6" >
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Awards &nbsp; : &nbsp;
-          <img src="https://static-00.iconduck.com/assets.00/trophy-icon-512x455-ginjodcb.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="trophy icon" title="trophy icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstpvkpnm1y">  &nbsp; &nbsp; &nbsp;
-       
-      </li>
-      <li class="list-group-item">
-        Country &nbsp; : &nbsp;
-          <img src="https://static-00.iconduck.com/assets.00/globe-with-americas-shown-icon-511x512-m3md3msy.png" loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="Globe with Americas shown icon" title="Globe with Americas shown icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst4whlrune"> &nbsp; &nbsp; &nbsp;  
-      </li> 
-      <li class="list-group-item">Type &nbsp; : &nbsp;  
-          <img src="https://static-00.iconduck.com/assets.00/video-icon-512x342-iufbiqbl.png" loading="lazy" class="icon loaded movie" onload="LoadUtils.handleImageLoad(this);" onerror="LoadUtils.handleImageLoadError(this);" alt="Video icon" title="Video icon" data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst9asrwyny"> &nbsp; &nbsp; &nbsp;
-      </li>
-    </ul>
+
+    <div class="card col-md-3 offset-md-6 col-6">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Awards &nbsp; : &nbsp;
+          <img src="https://static-00.iconduck.com/assets.00/trophy-icon-512x455-ginjodcb.png" loading="lazy"
+            class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="trophy icon" title="trophy icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asstpvkpnm1y">
+          &nbsp; &nbsp; &nbsp; {{data.Awards}}
+
+        </li>
+        <li class="list-group-item">
+          Country &nbsp; : &nbsp;
+          <img src="https://static-00.iconduck.com/assets.00/globe-with-americas-shown-icon-511x512-m3md3msy.png"
+            loading="lazy" class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="Globe with Americas shown icon"
+            title="Globe with Americas shown icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst4whlrune">
+          &nbsp; &nbsp; &nbsp; {{data.Country}}
+        </li>
+        <li class="list-group-item">Type &nbsp; : &nbsp;
+          <img src="https://static-00.iconduck.com/assets.00/video-icon-512x342-iufbiqbl.png" loading="lazy"
+            class="icon loaded movie" onload="LoadUtils.handleImageLoad(this);"
+            onerror="LoadUtils.handleImageLoadError(this);" alt="Video icon" title="Video icon"
+            data-alternate="https://d1rs1tqcxzgl1z.cloudfront.net/iconduck/image/upload/w_614,h_614,c_fit/f_png/e_colorize:0,co_rgb:000000/w_644,h_644,c_lpad/e_trim:1/w_512,h_512,c_fit/s3.prod/assets.00/asst9asrwyny">
+          &nbsp; &nbsp; &nbsp; {{data.Type}}
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
-  </div>
+<!-- YT VIDEOS START -->
+<hr>
 
+<div class="container mt-5 mb-5">
+  <h3 class="mb-5"> {{data.Title}} &nbsp; VIDEOS</h3>
+  <div class="row">
+
+
+
+    <div class="col-md-3 col-12 mb-md-0 mb-3">
+      <div class="video-card">
+        <img [src]="api[0]?.snippet?.thumbnails?.high?.url" class="video-thumbnail" alt="Video Thumbnail">
+        <div class="video-info">
+          <h5 class="video-title ">{{api[0].snippet?.title}}</h5>
+          <button class="btn btn-danger play-video" (click)="onClicked(api[0]?.id?.videoId)" >Play</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 col-12 mb-md-0 mb-3">
+      <div class="video-card">
+        <img [src]="api[1]?.snippet?.thumbnails?.high?.url" class="video-thumbnail" alt="Video Thumbnail">
+        <div class="video-info">
+          <h5 class="video-title">{{api[1]?.snippet?.title}}</h5>
+          <button class="btn btn-danger play-video" (click)="onClicked(api[1]?.id?.videoId)" >Play</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 col-12 mb-md-0 mb-3">
+      <div class="video-card">
+        <img [src]="api[2]?.snippet?.thumbnails?.high?.url" class="video-thumbnail" alt="Video Thumbnail">
+        <div class="video-info">
+          <h5 class="video-title">{{api[2]?.snippet?.title}}</h5>
+          <button class="btn btn-danger play-video" (click)="onClicked(api[2]?.id?.videoId)" >Play</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-md-3 col-12 mb-md-0 mb-3">
+      <div class="video-card">
+        <img [src]="api[3]?.snippet?.thumbnails?.high?.url" class="video-thumbnail" alt="Video Thumbnail">
+        <div class="video-info">
+          <h5 class="video-title">{{api[3]?.snippet?.title}}</h5>
+          <button class="btn btn-danger play-video" (click)="onClicked(api[3]?.id?.videoId)" >Play</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+@if (Id) {
+<div class="modal fade show d-block" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe width="100%" height="315" [src]="Id" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" (click)="onClose()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+<hr>

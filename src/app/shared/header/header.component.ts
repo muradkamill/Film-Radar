@@ -5,12 +5,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
-  encapsulation:ViewEncapsulation.None,
-
-
+  encapsulation: ViewEncapsulation.None,
 })
-
-
-export class HeaderComponent {
-
-}
+export class HeaderComponent {}
