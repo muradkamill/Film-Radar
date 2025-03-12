@@ -3,7 +3,8 @@
 FilmRadar is a web application that allows you to search for any movie, get detailed information about it, and watch related YouTube videos. 🍿  
 
 ## 📸 Screenshots  
-![FilmRadar Screenshot](your-screenshot-url)  
+![FilmRadar Screenshot](![Uploading Screenshot 2025-03-12 at 16.17.43.png…]()
+)  
 _(Replace "your-screenshot-url" with an actual image URL)_  
 
 ---
