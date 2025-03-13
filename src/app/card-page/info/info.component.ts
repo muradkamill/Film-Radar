@@ -67,7 +67,9 @@ export class InfoComponent implements OnInit {
         },
       });
   }
-  ngOnInit(): void {
+  ngOnInit(): void {this.func()}
+
+  func(){
     this.httpClient
       .get<any>(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.name}&type=video&maxResults=20&order=viewCount&regionCode=US&key=${this.key}`
@@ -76,13 +78,28 @@ export class InfoComponent implements OnInit {
         next: (data) => {
           for (let i = 0; i < 4; i++) {
             let x = Math.floor(Math.random() * 15);
-            if (data.items[x - 1] !== data.items[x]) {
+            if (
+              data.items[x] !== data.items[x + 1] &&
+              data.items[x] !== data.items[x + 3] &&
+              data.items[x] !== data.items[x + 2] &&
+              data.items[x + 1] !== data.items[x + 2] &&
+              data.items[x + 1] !== data.items[x + 3] &&
+              data.items[x + 2] !== data.items[x + 3]
+            ) {
               this.api.push(data.items[x]);
+              this.api.push(data.items[x + 1]);
+              this.api.push(data.items[x + 2]);
+              this.api.push(data.items[x + 3]);
+            } else {
+              this.func();
             }
           }
+
+
         },
       });
   }
+
 
   onClicked(videoId: string) {
     this.Id = this.sanitizer.bypassSecurityTrustResourceUrl(
@@ -93,6 +110,10 @@ export class InfoComponent implements OnInit {
   onClose() {
     this.Id = null;
   }
+
+
+
+
   public isClicked: boolean = false;
   onWatchClicked() {
     let isClicked = localStorage.getItem('isClicked');
