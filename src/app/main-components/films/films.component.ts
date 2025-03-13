@@ -187,7 +187,6 @@ export class FilmsComponent implements OnInit {
     'Luca',
     'Turning+Red',
     'Lightyear',
-    'The+Mitchells+vs+The+Machines',
     'Soul',
     'Coco',
     'Wreck-It+Ralph',

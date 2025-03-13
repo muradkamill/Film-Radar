@@ -102,61 +102,18 @@
         </li>
       </ul>
     </div>
-
-
-    <!-- <div class="row">
-      <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card h-100">
-          <ul class="list-group list-group-flush flex-grow-1">
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/imdb-icon-512x512-bjf2gjti.png" class="icon me-2" alt="IMDB Icon">
-              IMDb: {{InternetMovieDatabase}}
-            </li>
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/rotten-tomatoes-icon-510x512-3iv1447w.png" class="icon me-2" alt="Rotten Tomatoes Icon">
-              Rotten Tomatoes: {{rottenTomatoesRating}}
-            </li>
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/meta-fill-logo-icon-512x370-htf4d56z.png" class="icon me-2" alt="Metacritic Icon">
-              Metacritic: {{Metacritic}}
-            </li>
-          </ul>
-        </div>
-      </div>
-    
-      <div class="col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card h-100">
-          <ul class="list-group list-group-flush flex-grow-1">
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/trophy-icon-512x455-ginjodcb.png" class="icon me-2" alt="Awards Icon">
-              Awards: {{data.Awards}}
-            </li>
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/globe-with-americas-shown-icon-511x512-m3md3msy.png" class="icon me-2" alt="Country Icon">
-              Country: {{data.Country}}
-            </li>
-            <li class="list-group-item d-flex align-items-center">
-              <img src="https://static-00.iconduck.com/assets.00/video-icon-512x342-iufbiqbl.png" class="icon me-2" alt="Video Icon">
-              Type: {{data.Type}}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div> -->
-
-
-
-    
   </div>
 </div>
+
 <!-- YT VIDEOS START -->
-<hr>
+
+@if ((api[0] && api[1] && api[2] && api[3]) && (api[0] !== api[1] !== api[2] !== api[3])) {
+  <hr>
 
 <div class="container mt-5 mb-5">
   <h3 class="mb-5"> {{data.Title}} &nbsp; VIDEOS</h3>
   <div class="row">
 
-@if ((api[0] && api[1] && api[2] && api[3]) && (api[0] !== api[1] !== api[2] !== api[3])) {}
 
     <div class="col-md-3 col-12 mb-md-0 mb-3">
       <div class="video-card">
@@ -204,6 +161,7 @@
     </div>
   </div>
 </div>
+}
 
 
 

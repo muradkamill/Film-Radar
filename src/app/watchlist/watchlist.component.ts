@@ -4,30 +4,31 @@ import { FooterComponent } from '../shared/footer/footer.component';
 import { LogoSearchComponent } from '../shared/logo-search/logo-search.component';
 import { HeaderComponent } from '../shared/header/header.component';
 import { Router } from '@angular/router';
-import { FormsModule,NgModel } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-watchlist',
   templateUrl: './watchlist.component.html',
   styleUrl: './watchlist.component.css',
-  imports: [FooterComponent, LogoSearchComponent, HeaderComponent,FormsModule,CommonModule],
+  imports: [
+    FooterComponent,
+    LogoSearchComponent,
+    HeaderComponent,
+    FormsModule,
+    CommonModule,
+  ],
 })
 export class WatchlistComponent implements OnInit {
-  arr?:any[]=[];
+  arr?: any[] = [];
 
-  constructor(public service: ServiceService,public router:Router) {}
+  constructor(public service: ServiceService, public router: Router) {}
 
-   ngOnInit() {
-      this.arr=this.service.arr;
-      
-    
+  ngOnInit() {
+    this.arr = this.service.arr;
   }
-  onClicked(item:any){
+  onClicked(item: any) {
     this.router.navigate([`/film/${item.Title}`]);
-
   }
+
 }
-
-
-

@@ -1,10 +1,9 @@
-<hr>
-
+@if ((api[0]?.snippet.title && api[1]?.snippet.title && api[2]?.snippet.title && api[3]?.snippet.title) && (api[0] || api[1] || api[2] ||  api[3])) {
+  <hr>
 
 <div class="container mt-5 mb-5">
   <h3 class="mb-5">THE BEST MOVIES </h3>
   <div class="row">
-    @if ((api[0]?.snippet.title && api[1]?.snippet.title && api[2]?.snippet.title && api[3]?.snippet.title) && (api[0] || api[1] || api[2] ||  api[3])) {
     <div class="col-md-3 col-12 mb-md-0 mb-3">
       <div class="video-card">
         <img src='{{api[0]?.snippet?.thumbnails.high.url}}' class="video-thumbnail" alt="Video Thumbnail">
@@ -44,9 +43,10 @@
         </div>
       </div>
     </div>
-  }
+  
   </div>
 </div>
+}
 @if (Id) {
 <div class="modal fade show d-block" id="videoModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">

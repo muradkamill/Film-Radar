@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
+import { formatCurrency } from '@angular/common';
 
 @Component({
   selector: 'app-info',
@@ -10,41 +11,37 @@ import { ServiceService } from '../../services/service.service';
   templateUrl: './info.component.html',
   styleUrl: './info.component.css',
 })
-export class InfoComponent implements OnInit{
+export class InfoComponent implements OnInit {
   name?: any;
   MovieApi: any;
   search?: string;
   response?: string;
   data?: any;
+  datas: any[] = [];
   InternetMovieDatabase: any;
   rottenTomatoesRating: any;
   Metacritic: any;
-  Id?: SafeResourceUrl|null=null;
+  Id?: SafeResourceUrl | null = null;
   api: any[] = [];
-  key='AIzaSyBGlvykkr32Ewb6OogNtckDeejIR21cbrU'
-
+  key = 'AIzaSyBt5hlbl-3jGPq4JWi-bS2PBgif5xXnxYE';
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
     private sanitizer: DomSanitizer,
-    private service:ServiceService
+    private service: ServiceService
   ) {
     activatedRoute.paramMap.subscribe({
       next: (data) => (this.name = data.get('name')),
     });
-
-
-
-
-
 
     httpClient
       .get<any>(`https://www.omdbapi.com/?t=${this.name}&apikey=6206dff2`)
       .subscribe({
         next: (data) => {
           this.data = data;
+          this.datas.push(this.data);
           this.response = data.Response;
           this.search = this.name;
           this.InternetMovieDatabase =
@@ -66,32 +63,37 @@ export class InfoComponent implements OnInit{
       });
   }
   ngOnInit(): void {
-
-      this.httpClient
-        .get<any>(
-`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.name}&type=video&maxResults=20&order=viewCount&regionCode=US&key=${this.key}`).subscribe({
-          next: (data) =>{
-            for (let i = 0; i < 4; i++) {
-              let x = Math.floor(Math.random() * 15);
-            if(data.items[x-1]!==data.items[x]){
-             this.api.push(data.items[x])
+    this.httpClient
+      .get<any>(
+        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${this.name}&type=video&maxResults=20&order=viewCount&regionCode=US&key=${this.key}`
+      )
+      .subscribe({
+        next: (data) => {
+          for (let i = 0; i < 4; i++) {
+            let x = Math.floor(Math.random() * 15);
+            if (data.items[x - 1] !== data.items[x]) {
+              this.api.push(data.items[x]);
             }
           }
-          }
-        });
-    
+        },
+      });
   }
 
-
   onClicked(videoId: string) {
-    this.Id = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${videoId}`);
+    this.Id = this.sanitizer.bypassSecurityTrustResourceUrl(
+      `https://www.youtube.com/embed/${videoId}`
+    );
     return videoId;
   }
   onClose() {
     this.Id = null;
   }
-  onWatchClicked(){
-    this.service.onWatch(this.data)
+  public isClicked: boolean = false;
+  onWatchClicked() {
+    let isClicked = localStorage.getItem('isClicked');
+    if (!isClicked) {
+      this.service.onWatch(this.data);
+      localStorage.setItem('isClicked', 'true');
+    }
+    }
   }
-
-}

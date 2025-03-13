@@ -187,7 +187,6 @@ export class CaruselComponent {
     'Luca',
     'Turning+Red',
     'Lightyear',
-    'The+Mitchells+vs+The+Machines',
     'Soul',
     'Coco',
     'Wreck-It+Ralph',

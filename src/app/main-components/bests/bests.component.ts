@@ -11,7 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class BestsComponent implements OnInit {
   api: any[] = [];
   Id?: SafeResourceUrl|null=null;
-  key='AIzaSyBGlvykkr32Ewb6OogNtckDeejIR21cbrU'
+  key='AIzaSyBt5hlbl-3jGPq4JWi-bS2PBgif5xXnxYE'
 
   constructor(private httpClient: HttpClient,private sanitizer: DomSanitizer) {}
 
