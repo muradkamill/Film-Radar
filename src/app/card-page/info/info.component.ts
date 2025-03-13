@@ -4,14 +4,18 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
 import { formatCurrency } from '@angular/common';
+import { environment } from '../../enviroment/enviroment.prod';
+
 
 @Component({
   selector: 'app-info',
   imports: [],
   templateUrl: './info.component.html',
   styleUrl: './info.component.css',
+
 })
 export class InfoComponent implements OnInit {
+
   name?: any;
   MovieApi: any;
   search?: string;
@@ -23,7 +27,8 @@ export class InfoComponent implements OnInit {
   Metacritic: any;
   Id?: SafeResourceUrl | null = null;
   api: any[] = [];
-  key = 'AIzaSyBt5hlbl-3jGPq4JWi-bS2PBgif5xXnxYE';
+  key=environment.youtubeApiKey;
+  omdbKey=environment.omdbApiKey;
 
   constructor(
     private router: Router,
@@ -37,7 +42,7 @@ export class InfoComponent implements OnInit {
     });
 
     httpClient
-      .get<any>(`https://www.omdbapi.com/?t=${this.name}&apikey=6206dff2`)
+      .get<any>(`https://www.omdbapi.com/?t=${this.name}&apikey=${this.omdbKey}`)
       .subscribe({
         next: (data) => {
           this.data = data;

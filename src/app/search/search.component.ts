@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ServiceService } from '../services/service.service';
+import { environment } from '../enviroment/enviroment.prod';
 
 @Component({
   selector: 'app-search',
@@ -26,6 +27,7 @@ export class SearchComponent {
   search?: string;
   response?: string;
   data?: any;
+  omdbKey=environment.omdbApiKey;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -48,7 +50,7 @@ export class SearchComponent {
     if (!this.name) return;
 
     this.httpClient
-      .get<any>(`https://www.omdbapi.com/?t=${this.name}&apikey=6206dff2`)
+      .get<any>(`https://www.omdbapi.com/?t=${this.name}&apikey=${this.omdbKey}`)
       .subscribe({
         next: (data) => {
           this.data = data;

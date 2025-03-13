@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../enviroment/enviroment.prod';
 
 @Component({
   selector: 'app-carusel',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class CaruselComponent {
   data?: any;
   threeFilms: any[] = [];
-
+  omdbKey=environment.omdbApiKey;
   popularMovies: string[] = [
     'The+Shawshank+Redemption',
     'The+Godfather',
@@ -205,7 +206,7 @@ export class CaruselComponent {
 
       this.httpClient
         .get<any>(
-          `https://www.omdbapi.com/?t=${this.popularMovies[i]}&apikey=6206dff2`
+          `https://www.omdbapi.com/?t=${this.popularMovies[i]}&apikey=${this.omdbKey}`
         )
         .subscribe({
           next: (data) => {

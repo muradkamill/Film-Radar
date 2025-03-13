@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { environment } from '../../enviroment/enviroment.prod';
 
 @Component({
   selector: 'app-bests',
@@ -11,7 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class BestsComponent implements OnInit {
   api: any[] = [];
   Id?: SafeResourceUrl|null=null;
-  key='AIzaSyBt5hlbl-3jGPq4JWi-bS2PBgif5xXnxYE'
+  key=environment.youtubeApiKey;
 
   constructor(private httpClient: HttpClient,private sanitizer: DomSanitizer) {}
 

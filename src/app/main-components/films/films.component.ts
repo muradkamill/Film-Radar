@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { ServiceService } from '../../services/service.service';
+import { environment } from '../../enviroment/enviroment.prod';
 
 @Component({
   selector: 'app-films',
@@ -13,6 +14,7 @@ import { ServiceService } from '../../services/service.service';
 export class FilmsComponent implements OnInit {
   data?: any;
   sixFilms: any[] = [];
+  omdbKey=environment.omdbApiKey;
   popularMovies: string[] = [
     'The+Shawshank+Redemption',
     'The+Godfather',
@@ -216,7 +218,7 @@ export class FilmsComponent implements OnInit {
 
       this.httpClient
         .get<any>(
-          `https://www.omdbapi.com/?t=${this.popularMovies[i]}&apikey=6206dff2`
+          `https://www.omdbapi.com/?t=${this.popularMovies[i]}&apikey=${this.omdbKey}`
         )
         .subscribe({
           next: (data) => {
