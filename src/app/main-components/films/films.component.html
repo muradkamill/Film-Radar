@@ -17,7 +17,7 @@
 
             <div
               class=" col-md-3 text-end text-md-end mt-2 mt-md-0 col-6 position-relative d-flex justify-content-end      position-absolute bottom-1 end-0 me-3 mb-4">
-              <button (click)="onWatch(sixFilms[0])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
+              <button  (click)="onWatch(sixFilms[0])" class="watchlist border-dark border bg-custom-gray text-light  py-0    ">
                 <img src="https://static-00.iconduck.com/assets.00/plus-icon-512x512-hnjyaquo.png" loading="lazy"
                   class="icon loaded" onload="LoadUtils.handleImageLoad(this);"
                   onerror="LoadUtils.handleImageLoadError(this);" alt="plus icon" title="plus icon"
@@ -213,5 +213,16 @@
   }
   </div>
 </div>
+
+
+
+<!-- <mat-form-field>
+  <mat-label>Snack bar duration (seconds)</mat-label>
+  <input type="number" [(ngModel)]="durationInSeconds" matInput>
+</mat-form-field>
+
+<button mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+  Pizza party
+</button> -->
 
 

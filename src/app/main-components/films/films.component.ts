@@ -1,20 +1,27 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { ServiceService } from '../../services/service.service';
 import { environment } from '../../enviroment/enviroment.prod';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-films',
-  imports: [],
+  imports: [MatFormFieldModule, FormsModule, MatInputModule, MatButtonModule],
   templateUrl: './films.component.html',
   styleUrl: './films.component.css',
 })
 export class FilmsComponent implements OnInit {
   data?: any;
+  durationInSeconds = 5;
+
   sixFilms: any[] = [];
-  omdbKey=environment.omdbApiKey;
+  omdbKey = environment.omdbApiKey;
   popularMovies: string[] = [
     'The+Shawshank+Redemption',
     'The+Godfather',
@@ -203,8 +210,9 @@ export class FilmsComponent implements OnInit {
   constructor(
     private router: Router,
     private httpClient: HttpClient,
-    private service: ServiceService
-  ){}
+    private service: ServiceService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit() {
     this.router.events
@@ -247,7 +255,15 @@ export class FilmsComponent implements OnInit {
     this.router.navigate([`/film/${this.sixFilms[5].Title}`]);
   }
 
-  onWatch(sixFilms:any) {
+  onWatch(sixFilms: any) {
     this.service.onWatch(sixFilms);
+    this._snackBar.open(`${sixFilms?.Title} added to watchlist`, '', {
+      duration: 1700, 
+      horizontalPosition: 'right', 
+      verticalPosition: 'top', 
+    });
   }
+
+
+  
 }
