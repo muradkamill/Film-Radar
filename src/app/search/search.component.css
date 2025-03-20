@@ -11,3 +11,6 @@
 .custom-cards a:hover{
        color: white;
 }
+.card-title{
+       cursor: pointer;
+}

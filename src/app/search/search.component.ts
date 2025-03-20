@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 import { environment } from '../enviroment/enviroment.prod';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-search',
@@ -30,6 +31,7 @@ export class SearchComponent {
   omdbKey=environment.omdbApiKey;
 
   constructor(
+    private _snackBar: MatSnackBar,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
     private router: Router,
@@ -60,6 +62,11 @@ export class SearchComponent {
       });
   }
   onWatchlist(){
-this.service.onWatch(this.data)
+this.service.onWatch(this.data);
+this._snackBar.open(`${this.data?.Title} added to watchlist`, '', {
+  duration: 1700, 
+  horizontalPosition: 'right', 
+  verticalPosition: 'top', 
+});  
   }
 }

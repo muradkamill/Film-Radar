@@ -6,13 +6,13 @@
 <!-- SEARCHED FILM START -->
 @if((response=='True') && search ){
 <div class="container  w-md-75 ">
-       <h3 class="mb-4">Search Result For : {{data?.Title}} </h3>
+       <h3 class="mb-4">Search Result For : {{data?.Title}}   </h3>
        <div class="row ">
               <div class="col-md-4 mt-3 mb-3  ">
                      <div class="card custom-cards border border-dark ">
                             <img  src='{{data?.Poster}}' class="  card-img-top" alt="...">
                             <div class="card-body  text-light">
-                                   <h5 class="card-title ">{{data?.Title}}</h5>
+                                   <h5 class="card-title " (click)="onClicked()">{{data?.Title}}</h5>
                                    <p class="card-text">{{data?.Plot}}</p>
                             </div>
 

@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ServiceService } from '../../services/service.service';
-import { formatCurrency } from '@angular/common';
 import { environment } from '../../enviroment/enviroment.prod';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -31,6 +31,7 @@ export class InfoComponent implements OnInit {
   omdbKey=environment.omdbApiKey;
 
   constructor(
+    private _snackBar: MatSnackBar,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private httpClient: HttpClient,
@@ -114,12 +115,13 @@ export class InfoComponent implements OnInit {
 
 
 
-  public isClicked: boolean = false;
+
   onWatchClicked() {
-    let isClicked = localStorage.getItem('isClicked');
-    if (!isClicked) {
       this.service.onWatch(this.data);
-      localStorage.setItem('isClicked', 'true');
-    }
+      this._snackBar.open(`${this.data?.Title} added to watchlist`, '', {
+        duration: 1700, 
+        horizontalPosition: 'right', 
+        verticalPosition: 'top', 
+      });      
     }
   }

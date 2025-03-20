@@ -18,7 +18,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class FilmsComponent implements OnInit {
   data?: any;
-  durationInSeconds = 5;
 
   sixFilms: any[] = [];
   omdbKey = environment.omdbApiKey;
