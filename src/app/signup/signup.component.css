@@ -1,80 +1,23 @@
-* {
-  font-weight: bold;
-}
 .body {
-  background-color: #f0e1b3;
+font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
   background-image: url("/yy.jpg");
-  background-size: 103rem;
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 .container {
-
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 500px;
-  height: 500px;
   background-color: #f0e1b3;
 
-}
-
-h2 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #5cb85c;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #4cae4c;
-}
-
-#message {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.error {
-  color: red;
-  font-size: 0.9em;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%; 
 }
 
 .password-hint {
@@ -84,26 +27,32 @@ button:hover {
   display: none;
 }
 
-.password-strength {
-  margin-top: 5px;
+.error {
+  color: red;
+  font-size: 0.9em;
 }
 
-.password-strength div {
-  height: 5px;
-  border-radius: 4px;
-}
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
 
-.weak {
-  width: 33%;
-  background-color: red;
-}
+  .container {
+    width: 100%; 
+    padding: 15px;
+  }
 
-.medium {
-  width: 66%;
-  background-color: orange;
-}
+  .form-control {
+    width: 100%;
+    padding: 10px;
+  }
 
-.strong {
-  width: 100%;
-  background-color: green;
-}
+  button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .password-hint {
+    display: block; 
+  }
+} 
