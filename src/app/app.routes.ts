@@ -4,6 +4,8 @@ import { ErrorComponent } from './error/error.component';
 import { WatchlistComponent } from './watchlist/watchlist.component';
 import { SearchComponent } from './search/search.component';
 import { BodyComponent } from './body/body.component';
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 
 export const routes: Routes = [
   {
@@ -13,6 +15,14 @@ component:BodyComponent
   {
     path: 'search',
     component: SearchComponent,
+  },
+  {
+    path: 'signup',
+component:SignupComponent
+  },
+  {
+    path: 'signin',
+component:SigninComponent
   },
   {
     path: 'search/:name',

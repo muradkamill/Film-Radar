@@ -1,0 +1,37 @@
+      <div class="body">
+        <div class="container">
+            <h2>Sign up</h2>
+            <form id="signupForm">
+
+                <div class="form-group">
+                    <label for="username" class="fw-bold">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="fw-bold" >Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="fw-bold">Password</label>
+                    <input type="password" id="password" name="password"  [(ngModel)]="password" required>
+                    <div class="password-hint" id="passwordHint" >
+                        Password must be at least 8 characters long, and include at
+                        least one uppercase letter, one lowercase letter, one
+                        number, and one special character.
+                    </div>
+                    <span id="passwordError" class="error"></span>
+                    <div class="password-strength" id="passwordStrength"></div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="fw-bold">Confirm Password</label>
+                    <input type="password" id="confirmPassword"
+                        name="confirmPassword" required>
+                    <span id="confirmPasswordError" class="error"></span>
+                </div>
+                <button type="submit" class="bg-dark text-light" class="fw-bold" (click)="signUp()">Signup</button>
+            </form>
+            <p id="message"></p>
+        </div>
+        
+    
+      </div>

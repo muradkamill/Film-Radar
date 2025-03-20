@@ -69,7 +69,6 @@ export class CaruselComponent {
     'Memento',
     'Django+Unchained',
     'Raiders+of+the+Lost+Ark',
-    'Wall-E',
     'The+Shining',
     'Sunset+Boulevard',
     'Paths+of+Glory',

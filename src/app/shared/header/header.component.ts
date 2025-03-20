@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,13 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrl: './header.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  constructor(private router:Router){}
+  onSignin(){
+this.router.navigate(['/signin'])
+  }
+  onSignup(){
+    this.router.navigate(['/signup'])
+
+  }
+}
